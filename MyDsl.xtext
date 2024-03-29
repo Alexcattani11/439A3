@@ -1,0 +1,36 @@
+grammar org.xtext.ecse439.ims.ImsDsl with org.eclipse.xtext.common.Terminals
+
+generate imsDsl "http://www.xtext.org/ecse439/ims/ImsDsl"
+
+Model:
+    fields+=Field* 
+    sections+=Section* 
+    pumps+=Pump* 
+    rules+=Rule*;
+
+Field:
+    'Field' name=ID '{'
+        'sections' sections=[Section] ("," sections=[Section])*
+    '}';
+
+Section:
+    'Section' name=ID '{'
+        'pumps' pumps=[Pump] ("," pumps=[Pump])*
+    '}';
+
+Pump:
+    'Pump' name=ID '{'
+        'setting' setting=WaterSetting
+    '}';
+
+Rule:
+    'Rule' name=ID '{'
+        'expression' expression=STRING
+        'action' action=Action
+    '}';
+
+WaterSetting:
+    'LOW' | 'MEDIUM' | 'HIGH';
+
+Action:
+    'ACTIVATE' | 'DEACTIVATE';
