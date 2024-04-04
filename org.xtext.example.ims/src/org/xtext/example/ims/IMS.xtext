@@ -8,7 +8,7 @@ IMS:
 	(fields+=Field)*;
 	
 IrrigationRule:
-	'If' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
+	'if' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
 ;
 
 Expression:
