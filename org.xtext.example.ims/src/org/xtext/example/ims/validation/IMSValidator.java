@@ -3,6 +3,10 @@
  */
 package org.xtext.example.ims.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.example.ims.iMS.AtomicExpression;
+import org.xtext.example.ims.iMS.IMSPackage;
+import org.xtext.example.ims.iMS.IrrigationRule;
 
 /**
  * This class contains custom validation rules. 
@@ -22,4 +26,35 @@ public class IMSValidator extends AbstractIMSValidator {
 //		}
 //	}
 	
+	@Check
+	public void checkForecastRangeIsValid(AtomicExpression atomicExpression) {
+		int forecastLowerBound = atomicExpression.getForecastLowerBound();
+		int forecastUpperBound = atomicExpression.getForecastUpperBound();
+		
+		if (!(forecastLowerBound < forecastUpperBound)) {
+			warning("Forecast range is not valid", IMSPackage.Literals.ATOMIC_EXPRESSION__FORECAST_LOWER_BOUND, IMSPackage.Literals.ATOMIC_EXPRESSION__FORECAST_UPPER_BOUND);
+		}
+	}
+	
+	@Check
+	public void checkMoistureLevelRangeIsValid(AtomicExpression atomicExpression) {
+		int moistureLowerBound = atomicExpression.getMoistureLowerBound();
+		int moistureUpperBound = atomicExpression.getMoistureUpperBound(); 
+		
+		if(!(moistureLowerBound < moistureUpperBound)) {
+			warning("Moisture Level range is not valid", IMSPackage.Literals.ATOMIC_EXPRESSION__MOISTURE_LOWER_BOUND, IMSPackage.Literals.ATOMIC_EXPRESSION__MOISTURE_UPPER_BOUND);
+		}
+		
+	}
+	
+	@Check
+	public void checkDurationIsNotZero(IrrigationRule irrigationRule) {
+		int duration = irrigationRule.getDuration();
+		
+		if(duration == 0) {
+			warning("Duration cannot be 0", IMSPackage.Literals.IRRIGATION_RULE__DURATION);
+		}
+	}
+	
+	// Make sure duration is NOT 0
 }
