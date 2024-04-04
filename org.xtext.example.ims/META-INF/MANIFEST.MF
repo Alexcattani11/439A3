@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.ims
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.ims
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.ims; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.34.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.xtext.example.ims.generator,
+ org.xtext.example.ims.iMS,
+ org.xtext.example.ims.iMS.util,
+ org.xtext.example.ims.serializer,
+ org.xtext.example.ims.parser.antlr.internal,
+ org.xtext.example.ims.validation,
+ org.xtext.example.ims.iMS.impl,
+ org.xtext.example.ims,
+ org.xtext.example.ims.scoping,
+ org.xtext.example.ims.services,
+ org.xtext.example.ims.parser.antlr
+Import-Package: org.apache.log4j

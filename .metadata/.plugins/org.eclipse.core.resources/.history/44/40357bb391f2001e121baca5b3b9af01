@@ -1,0 +1,9 @@
+grammar org.xtext.example.ims.IMS with org.eclipse.xtext.common.Terminals
+
+generate iMS "http://www.xtext.org/example/ims/IMS"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
