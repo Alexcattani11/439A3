@@ -1,0 +1,27 @@
+Field FieldA {
+  section North {
+    pump PumpA1
+    pump PumpA2
+  }
+  section South {
+    pump PumpA3
+  }
+}
+
+Field FieldB {
+  section East {
+    pump PumpB1
+  }
+  section West {
+    pump PumpB2
+    pump PumpB3
+  }
+}
+
+IrrigationRule If (forecast = 70 to 80%, FieldA.moisture = 25 to 35) then HIGH for PumpA1, PumpA3 for 3 hour(s)
+IrrigationRule If (forecast = 50 to 60%, FieldA.moisture = 20 to 30) then MEDIUM for PumpA2 for 2 hour(s)
+IrrigationRule If (forecast = 30 to 40%, FieldB.moisture = 15 to 25) then LOW for PumpB1, PumpB2 for 4 hour(s)
+
+IrrigationRule If ((forecast = 30 to 40%, FieldA.moisture = 15 to 25) AND (forecast = 20 to 30%, FieldB.moisture = 10 to 20)) then MEDIUM for PumpA1, PumpA3, PumpB3 for 5 hour(s)
+
+IrrigationRule If ((forecast = 80 to 90%, FieldA.moisture = 35 to 45) OR (forecast = 60 to 70%, FieldB.moisture = 30 to 40)) then HIGH for PumpA2, PumpB1 for 1 hour(s)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iMS:IMS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:iMS="http://www.xtext.org/example/ims/IMS">
+  <fields name="FieldA">
+    <sections name="North">
+      <pumps name="PumpA1"/>
+      <pumps name="PumpA2"/>
+    </sections>
+    <sections name="South">
+      <pumps name="PumpA3"/>
+    </sections>
+  </fields>
+  <fields name="FieldB">
+    <sections name="East">
+      <pumps name="PumpB1"/>
+    </sections>
+    <sections name="West">
+      <pumps name="PumpB2"/>
+      <pumps name="PumpB3"/>
+    </sections>
+  </fields>
+</iMS:IMS>
