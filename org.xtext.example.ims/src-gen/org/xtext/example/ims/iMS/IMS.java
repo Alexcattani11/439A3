@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.ims.iMS.IMS#getFields <em>Fields</em>}</li>
  *   <li>{@link org.xtext.example.ims.iMS.IMS#getIrrigationRules <em>Irrigation Rules</em>}</li>
  *   <li>{@link org.xtext.example.ims.iMS.IMS#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.xtext.example.ims.iMS.IMS#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.ims.iMS.IMSPackage#getIMS()
@@ -27,6 +27,18 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface IMS extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.ims.iMS.Field}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fields</em>' containment reference list.
+   * @see org.xtext.example.ims.iMS.IMSPackage#getIMS_Fields()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Field> getFields();
+
   /**
    * Returns the value of the '<em><b>Irrigation Rules</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.example.ims.iMS.IrrigationRule}.
@@ -50,17 +62,5 @@ public interface IMS extends EObject
    * @generated
    */
   EList<Expression> getExpressions();
-
-  /**
-   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.ims.iMS.Field}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' containment reference list.
-   * @see org.xtext.example.ims.iMS.IMSPackage#getIMS_Fields()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Field> getFields();
 
 } // IMS

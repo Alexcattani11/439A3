@@ -28,141 +28,134 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class IMSElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.IMS");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIrrigationRulesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cIrrigationRulesIrrigationRuleParserRuleCall_0_0 = (RuleCall)cIrrigationRulesAssignment_0.eContents().get(0);
-		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpressionsExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
-		private final Assignment cFieldsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cFieldsFieldParserRuleCall_2_0 = (RuleCall)cFieldsAssignment_2.eContents().get(0);
+		private final Assignment cFieldsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFieldsFieldParserRuleCall_0_0 = (RuleCall)cFieldsAssignment_0.eContents().get(0);
+		private final Assignment cIrrigationRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIrrigationRulesIrrigationRuleParserRuleCall_1_0 = (RuleCall)cIrrigationRulesAssignment_1.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionsExpressionParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
 		
 		//IMS:
+		//    (fields+=Field)*
 		//    (irrigationRules+=IrrigationRule)*
 		//    (expressions+=Expression)*
-		//    (fields+=Field)*;
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//(fields+=Field)*
 		//(irrigationRules+=IrrigationRule)*
 		//(expressions+=Expression)*
-		//(fields+=Field)*
 		public Group getGroup() { return cGroup; }
 		
-		//(irrigationRules+=IrrigationRule)*
-		public Assignment getIrrigationRulesAssignment_0() { return cIrrigationRulesAssignment_0; }
-		
-		//IrrigationRule
-		public RuleCall getIrrigationRulesIrrigationRuleParserRuleCall_0_0() { return cIrrigationRulesIrrigationRuleParserRuleCall_0_0; }
-		
-		//(expressions+=Expression)*
-		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
-		
-		//Expression
-		public RuleCall getExpressionsExpressionParserRuleCall_1_0() { return cExpressionsExpressionParserRuleCall_1_0; }
-		
 		//(fields+=Field)*
-		public Assignment getFieldsAssignment_2() { return cFieldsAssignment_2; }
+		public Assignment getFieldsAssignment_0() { return cFieldsAssignment_0; }
 		
 		//Field
-		public RuleCall getFieldsFieldParserRuleCall_2_0() { return cFieldsFieldParserRuleCall_2_0; }
+		public RuleCall getFieldsFieldParserRuleCall_0_0() { return cFieldsFieldParserRuleCall_0_0; }
+		
+		//(irrigationRules+=IrrigationRule)*
+		public Assignment getIrrigationRulesAssignment_1() { return cIrrigationRulesAssignment_1; }
+		
+		//IrrigationRule
+		public RuleCall getIrrigationRulesIrrigationRuleParserRuleCall_1_0() { return cIrrigationRulesIrrigationRuleParserRuleCall_1_0; }
+		
+		//(expressions+=Expression)*
+		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
+		
+		//Expression
+		public RuleCall getExpressionsExpressionParserRuleCall_2_0() { return cExpressionsExpressionParserRuleCall_2_0; }
 	}
 	public class IrrigationRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.IrrigationRule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cThenKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSettingAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSettingWaterSettingEnumRuleCall_5_0 = (RuleCall)cSettingAssignment_5.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSettingAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSettingWaterSettingEnumRuleCall_3_0 = (RuleCall)cSettingAssignment_3.eContents().get(0);
+		private final Keyword cForKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cPumpsAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final CrossReference cPumpsPumpCrossReference_5_0_0 = (CrossReference)cPumpsAssignment_5_0.eContents().get(0);
+		private final RuleCall cPumpsPumpNumberedElementFQNParserRuleCall_5_0_0_1 = (RuleCall)cPumpsPumpCrossReference_5_0_0.eContents().get(1);
+		private final Group cGroup_5_1 = (Group)cGroup_5.eContents().get(1);
+		private final Keyword cCommaKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
+		private final Assignment cPumpsAssignment_5_1_1 = (Assignment)cGroup_5_1.eContents().get(1);
+		private final CrossReference cPumpsPumpCrossReference_5_1_1_0 = (CrossReference)cPumpsAssignment_5_1_1.eContents().get(0);
+		private final RuleCall cPumpsPumpNumberedElementFQNParserRuleCall_5_1_1_0_1 = (RuleCall)cPumpsPumpCrossReference_5_1_1_0.eContents().get(1);
 		private final Keyword cForKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cPumpsAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final CrossReference cPumpsPumpCrossReference_7_0_0 = (CrossReference)cPumpsAssignment_7_0.eContents().get(0);
-		private final RuleCall cPumpsPumpIDTerminalRuleCall_7_0_0_1 = (RuleCall)cPumpsPumpCrossReference_7_0_0.eContents().get(1);
-		private final Group cGroup_7_1 = (Group)cGroup_7.eContents().get(1);
-		private final Keyword cCommaKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
-		private final Assignment cPumpsAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final CrossReference cPumpsPumpCrossReference_7_1_1_0 = (CrossReference)cPumpsAssignment_7_1_1.eContents().get(0);
-		private final RuleCall cPumpsPumpIDTerminalRuleCall_7_1_1_0_1 = (RuleCall)cPumpsPumpCrossReference_7_1_1_0.eContents().get(1);
-		private final Keyword cForKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cDurationAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cDurationINTTerminalRuleCall_9_0 = (RuleCall)cDurationAssignment_9.eContents().get(0);
-		private final Keyword cHourKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cDurationAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cDurationINTTerminalRuleCall_7_0 = (RuleCall)cDurationAssignment_7.eContents().get(0);
+		private final Keyword cHourSKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//IrrigationRule:
-		//    'If' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
+		//    'If' expression=Expression 'then' setting=WaterSetting 'for' (pumps+=[Pump|NumberedElementFQN] (',' pumps+=[Pump|NumberedElementFQN])*)+ 'for' duration=INT 'hour(s)'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'If' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
+		//'If' expression=Expression 'then' setting=WaterSetting 'for' (pumps+=[Pump|NumberedElementFQN] (',' pumps+=[Pump|NumberedElementFQN])*)+ 'for' duration=INT 'hour(s)'
 		public Group getGroup() { return cGroup; }
 		
 		//'If'
 		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
 		//expression=Expression
-		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
 		
 		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
 		
 		//'then'
-		public Keyword getThenKeyword_4() { return cThenKeyword_4; }
+		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
 		
 		//setting=WaterSetting
-		public Assignment getSettingAssignment_5() { return cSettingAssignment_5; }
+		public Assignment getSettingAssignment_3() { return cSettingAssignment_3; }
 		
 		//WaterSetting
-		public RuleCall getSettingWaterSettingEnumRuleCall_5_0() { return cSettingWaterSettingEnumRuleCall_5_0; }
+		public RuleCall getSettingWaterSettingEnumRuleCall_3_0() { return cSettingWaterSettingEnumRuleCall_3_0; }
+		
+		//'for'
+		public Keyword getForKeyword_4() { return cForKeyword_4; }
+		
+		//(pumps+=[Pump|NumberedElementFQN] (',' pumps+=[Pump|NumberedElementFQN])*)+
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//pumps+=[Pump|NumberedElementFQN]
+		public Assignment getPumpsAssignment_5_0() { return cPumpsAssignment_5_0; }
+		
+		//[Pump|NumberedElementFQN]
+		public CrossReference getPumpsPumpCrossReference_5_0_0() { return cPumpsPumpCrossReference_5_0_0; }
+		
+		//NumberedElementFQN
+		public RuleCall getPumpsPumpNumberedElementFQNParserRuleCall_5_0_0_1() { return cPumpsPumpNumberedElementFQNParserRuleCall_5_0_0_1; }
+		
+		//(',' pumps+=[Pump|NumberedElementFQN])*
+		public Group getGroup_5_1() { return cGroup_5_1; }
+		
+		//','
+		public Keyword getCommaKeyword_5_1_0() { return cCommaKeyword_5_1_0; }
+		
+		//pumps+=[Pump|NumberedElementFQN]
+		public Assignment getPumpsAssignment_5_1_1() { return cPumpsAssignment_5_1_1; }
+		
+		//[Pump|NumberedElementFQN]
+		public CrossReference getPumpsPumpCrossReference_5_1_1_0() { return cPumpsPumpCrossReference_5_1_1_0; }
+		
+		//NumberedElementFQN
+		public RuleCall getPumpsPumpNumberedElementFQNParserRuleCall_5_1_1_0_1() { return cPumpsPumpNumberedElementFQNParserRuleCall_5_1_1_0_1; }
 		
 		//'for'
 		public Keyword getForKeyword_6() { return cForKeyword_6; }
 		
-		//(pumps+=[Pump] (',' pumps+=[Pump])*)+
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//pumps+=[Pump]
-		public Assignment getPumpsAssignment_7_0() { return cPumpsAssignment_7_0; }
-		
-		//[Pump]
-		public CrossReference getPumpsPumpCrossReference_7_0_0() { return cPumpsPumpCrossReference_7_0_0; }
-		
-		//ID
-		public RuleCall getPumpsPumpIDTerminalRuleCall_7_0_0_1() { return cPumpsPumpIDTerminalRuleCall_7_0_0_1; }
-		
-		//(',' pumps+=[Pump])*
-		public Group getGroup_7_1() { return cGroup_7_1; }
-		
-		//','
-		public Keyword getCommaKeyword_7_1_0() { return cCommaKeyword_7_1_0; }
-		
-		//pumps+=[Pump]
-		public Assignment getPumpsAssignment_7_1_1() { return cPumpsAssignment_7_1_1; }
-		
-		//[Pump]
-		public CrossReference getPumpsPumpCrossReference_7_1_1_0() { return cPumpsPumpCrossReference_7_1_1_0; }
-		
-		//ID
-		public RuleCall getPumpsPumpIDTerminalRuleCall_7_1_1_0_1() { return cPumpsPumpIDTerminalRuleCall_7_1_1_0_1; }
-		
-		//'for'
-		public Keyword getForKeyword_8() { return cForKeyword_8; }
-		
 		//duration=INT
-		public Assignment getDurationAssignment_9() { return cDurationAssignment_9; }
+		public Assignment getDurationAssignment_7() { return cDurationAssignment_7; }
 		
 		//INT
-		public RuleCall getDurationINTTerminalRuleCall_9_0() { return cDurationINTTerminalRuleCall_9_0; }
+		public RuleCall getDurationINTTerminalRuleCall_7_0() { return cDurationINTTerminalRuleCall_7_0; }
 		
-		//'hour'
-		public Keyword getHourKeyword_10() { return cHourKeyword_10; }
+		//'hour(s)'
+		public Keyword getHourSKeyword_8() { return cHourSKeyword_8; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.Expression");
@@ -187,36 +180,42 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class FieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.Field");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAssetNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAssetNumberIDTerminalRuleCall_1_0 = (RuleCall)cAssetNumberAssignment_1.eContents().get(0);
-		private final Assignment cSectionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSectionsSectionParserRuleCall_2_0 = (RuleCall)cSectionsAssignment_2.eContents().get(0);
+		private final Keyword cFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSectionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSectionsSectionParserRuleCall_3_0 = (RuleCall)cSectionsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Field:
-		//    'F' assetNumber=ID
-		//    (sections+=Section)*
+		//    'Field' name=ID '{' (sections+=Section)* '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'F' assetNumber=ID
-		//(sections+=Section)*
+		//'Field' name=ID '{' (sections+=Section)* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'F'
-		public Keyword getFKeyword_0() { return cFKeyword_0; }
+		//'Field'
+		public Keyword getFieldKeyword_0() { return cFieldKeyword_0; }
 		
-		//assetNumber=ID
-		public Assignment getAssetNumberAssignment_1() { return cAssetNumberAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getAssetNumberIDTerminalRuleCall_1_0() { return cAssetNumberIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(sections+=Section)*
-		public Assignment getSectionsAssignment_2() { return cSectionsAssignment_2; }
+		public Assignment getSectionsAssignment_3() { return cSectionsAssignment_3; }
 		
 		//Section
-		public RuleCall getSectionsSectionParserRuleCall_2_0() { return cSectionsSectionParserRuleCall_2_0; }
+		public RuleCall getSectionsSectionParserRuleCall_3_0() { return cSectionsSectionParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class NumberedElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.NumberedElement");
@@ -245,144 +244,162 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.Section");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAssetNumberAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cAssetNumberIDTerminalRuleCall_0_0 = (RuleCall)cAssetNumberAssignment_0.eContents().get(0);
-		private final Assignment cPumpsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPumpsPumpParserRuleCall_1_0 = (RuleCall)cPumpsAssignment_1.eContents().get(0);
+		private final Keyword cSectionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPumpsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPumpsPumpParserRuleCall_3_0 = (RuleCall)cPumpsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Section:
-		//    assetNumber=ID
-		//    (pumps+=Pump)*
+		//    'section' name=ID '{' (pumps+=Pump)+ '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//assetNumber=ID
-		//(pumps+=Pump)*
+		//'section' name=ID '{' (pumps+=Pump)+ '}'
 		public Group getGroup() { return cGroup; }
 		
-		//assetNumber=ID
-		public Assignment getAssetNumberAssignment_0() { return cAssetNumberAssignment_0; }
+		//'section'
+		public Keyword getSectionKeyword_0() { return cSectionKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getAssetNumberIDTerminalRuleCall_0_0() { return cAssetNumberIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//(pumps+=Pump)*
-		public Assignment getPumpsAssignment_1() { return cPumpsAssignment_1; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(pumps+=Pump)+
+		public Assignment getPumpsAssignment_3() { return cPumpsAssignment_3; }
 		
 		//Pump
-		public RuleCall getPumpsPumpParserRuleCall_1_0() { return cPumpsPumpParserRuleCall_1_0; }
+		public RuleCall getPumpsPumpParserRuleCall_3_0() { return cPumpsPumpParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class PumpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.Pump");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAssetNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAssetNumberIDTerminalRuleCall_1_0 = (RuleCall)cAssetNumberAssignment_1.eContents().get(0);
+		private final Keyword cPumpKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Pump:
-		//    'P' assetNumber=ID
+		//    'pump' name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'P' assetNumber=ID
+		//'pump' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'P'
-		public Keyword getPKeyword_0() { return cPKeyword_0; }
+		//'pump'
+		public Keyword getPumpKeyword_0() { return cPumpKeyword_0; }
 		
-		//assetNumber=ID
-		public Assignment getAssetNumberAssignment_1() { return cAssetNumberAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getAssetNumberIDTerminalRuleCall_1_0() { return cAssetNumberIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class AtomicExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.AtomicExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cForecastKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cForecastLowerBoundAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cForecastLowerBoundINTTerminalRuleCall_2_0 = (RuleCall)cForecastLowerBoundAssignment_2.eContents().get(0);
-		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cForecastUpperBoundAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cForecastUpperBoundINTTerminalRuleCall_4_0 = (RuleCall)cForecastUpperBoundAssignment_4.eContents().get(0);
-		private final Keyword cPercentSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cFieldAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cFieldFieldCrossReference_7_0 = (CrossReference)cFieldAssignment_7.eContents().get(0);
-		private final RuleCall cFieldFieldIDTerminalRuleCall_7_0_1 = (RuleCall)cFieldFieldCrossReference_7_0.eContents().get(1);
-		private final Keyword cMoistureKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cEqualsSignKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cMoistureLowerBoundAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cMoistureLowerBoundINTTerminalRuleCall_10_0 = (RuleCall)cMoistureLowerBoundAssignment_10.eContents().get(0);
-		private final Keyword cToKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cMoistureUpperBoundAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cMoistureUpperBoundINTTerminalRuleCall_12_0 = (RuleCall)cMoistureUpperBoundAssignment_12.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cForecastKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cForecastLowerBoundAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cForecastLowerBoundINTTerminalRuleCall_3_0 = (RuleCall)cForecastLowerBoundAssignment_3.eContents().get(0);
+		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cForecastUpperBoundAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cForecastUpperBoundINTTerminalRuleCall_5_0 = (RuleCall)cForecastUpperBoundAssignment_5.eContents().get(0);
+		private final Keyword cPercentSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cFieldAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cFieldFieldCrossReference_8_0 = (CrossReference)cFieldAssignment_8.eContents().get(0);
+		private final RuleCall cFieldFieldIDTerminalRuleCall_8_0_1 = (RuleCall)cFieldFieldCrossReference_8_0.eContents().get(1);
+		private final Keyword cMoistureKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cEqualsSignKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cMoistureLowerBoundAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cMoistureLowerBoundINTTerminalRuleCall_11_0 = (RuleCall)cMoistureLowerBoundAssignment_11.eContents().get(0);
+		private final Keyword cToKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cMoistureUpperBoundAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cMoistureUpperBoundINTTerminalRuleCall_13_0 = (RuleCall)cMoistureUpperBoundAssignment_13.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//AtomicExpression:
-		//    'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT
+		//    '(' 'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT
+		//'(' 'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT ')'
 		public Group getGroup() { return cGroup; }
 		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
 		//'forecast'
-		public Keyword getForecastKeyword_0() { return cForecastKeyword_0; }
+		public Keyword getForecastKeyword_1() { return cForecastKeyword_1; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 		
 		//forecastLowerBound=INT
-		public Assignment getForecastLowerBoundAssignment_2() { return cForecastLowerBoundAssignment_2; }
+		public Assignment getForecastLowerBoundAssignment_3() { return cForecastLowerBoundAssignment_3; }
 		
 		//INT
-		public RuleCall getForecastLowerBoundINTTerminalRuleCall_2_0() { return cForecastLowerBoundINTTerminalRuleCall_2_0; }
+		public RuleCall getForecastLowerBoundINTTerminalRuleCall_3_0() { return cForecastLowerBoundINTTerminalRuleCall_3_0; }
 		
 		//'to'
-		public Keyword getToKeyword_3() { return cToKeyword_3; }
+		public Keyword getToKeyword_4() { return cToKeyword_4; }
 		
 		//forecastUpperBound=INT
-		public Assignment getForecastUpperBoundAssignment_4() { return cForecastUpperBoundAssignment_4; }
+		public Assignment getForecastUpperBoundAssignment_5() { return cForecastUpperBoundAssignment_5; }
 		
 		//INT
-		public RuleCall getForecastUpperBoundINTTerminalRuleCall_4_0() { return cForecastUpperBoundINTTerminalRuleCall_4_0; }
+		public RuleCall getForecastUpperBoundINTTerminalRuleCall_5_0() { return cForecastUpperBoundINTTerminalRuleCall_5_0; }
 		
 		//'%'
-		public Keyword getPercentSignKeyword_5() { return cPercentSignKeyword_5; }
+		public Keyword getPercentSignKeyword_6() { return cPercentSignKeyword_6; }
 		
 		//','
-		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
 		
 		//field=[Field]
-		public Assignment getFieldAssignment_7() { return cFieldAssignment_7; }
+		public Assignment getFieldAssignment_8() { return cFieldAssignment_8; }
 		
 		//[Field]
-		public CrossReference getFieldFieldCrossReference_7_0() { return cFieldFieldCrossReference_7_0; }
+		public CrossReference getFieldFieldCrossReference_8_0() { return cFieldFieldCrossReference_8_0; }
 		
 		//ID
-		public RuleCall getFieldFieldIDTerminalRuleCall_7_0_1() { return cFieldFieldIDTerminalRuleCall_7_0_1; }
+		public RuleCall getFieldFieldIDTerminalRuleCall_8_0_1() { return cFieldFieldIDTerminalRuleCall_8_0_1; }
 		
 		//'.moisture'
-		public Keyword getMoistureKeyword_8() { return cMoistureKeyword_8; }
+		public Keyword getMoistureKeyword_9() { return cMoistureKeyword_9; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_9() { return cEqualsSignKeyword_9; }
+		public Keyword getEqualsSignKeyword_10() { return cEqualsSignKeyword_10; }
 		
 		//moistureLowerBound=INT
-		public Assignment getMoistureLowerBoundAssignment_10() { return cMoistureLowerBoundAssignment_10; }
+		public Assignment getMoistureLowerBoundAssignment_11() { return cMoistureLowerBoundAssignment_11; }
 		
 		//INT
-		public RuleCall getMoistureLowerBoundINTTerminalRuleCall_10_0() { return cMoistureLowerBoundINTTerminalRuleCall_10_0; }
+		public RuleCall getMoistureLowerBoundINTTerminalRuleCall_11_0() { return cMoistureLowerBoundINTTerminalRuleCall_11_0; }
 		
 		//'to'
-		public Keyword getToKeyword_11() { return cToKeyword_11; }
+		public Keyword getToKeyword_12() { return cToKeyword_12; }
 		
 		//moistureUpperBound=INT
-		public Assignment getMoistureUpperBoundAssignment_12() { return cMoistureUpperBoundAssignment_12; }
+		public Assignment getMoistureUpperBoundAssignment_13() { return cMoistureUpperBoundAssignment_13; }
 		
 		//INT
-		public RuleCall getMoistureUpperBoundINTTerminalRuleCall_12_0() { return cMoistureUpperBoundINTTerminalRuleCall_12_0; }
+		public RuleCall getMoistureUpperBoundINTTerminalRuleCall_13_0() { return cMoistureUpperBoundINTTerminalRuleCall_13_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_14() { return cRightParenthesisKeyword_14; }
 	}
 	public class CompoundExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.CompoundExpression");
@@ -397,7 +414,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//CompoundExpression:
-		//    '(' LHS=Expression operator=Operator RHS=Expression ')'
+		//     '(' LHS=Expression operator=Operator RHS=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -427,6 +444,34 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+	public class NumberedElementFQNElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.ims.IMS.NumberedElementFQN");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//NumberedElementFQN:
+		//    ID ("." ID)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ("." ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//("." ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	
 	public class WaterSettingElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -500,6 +545,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final CompoundExpressionElements pCompoundExpression;
 	private final WaterSettingElements eWaterSetting;
 	private final OperatorElements eOperator;
+	private final NumberedElementFQNElements pNumberedElementFQN;
 	
 	private final Grammar grammar;
 	
@@ -521,6 +567,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pCompoundExpression = new CompoundExpressionElements();
 		this.eWaterSetting = new WaterSettingElements();
 		this.eOperator = new OperatorElements();
+		this.pNumberedElementFQN = new NumberedElementFQNElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -551,9 +598,10 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 
 	
 	//IMS:
+	//    (fields+=Field)*
 	//    (irrigationRules+=IrrigationRule)*
 	//    (expressions+=Expression)*
-	//    (fields+=Field)*;
+	//;
 	public IMSElements getIMSAccess() {
 		return pIMS;
 	}
@@ -563,7 +611,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//IrrigationRule:
-	//    'If' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
+	//    'If' expression=Expression 'then' setting=WaterSetting 'for' (pumps+=[Pump|NumberedElementFQN] (',' pumps+=[Pump|NumberedElementFQN])*)+ 'for' duration=INT 'hour(s)'
 	//;
 	public IrrigationRuleElements getIrrigationRuleAccess() {
 		return pIrrigationRule;
@@ -585,8 +633,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Field:
-	//    'F' assetNumber=ID
-	//    (sections+=Section)*
+	//    'Field' name=ID '{' (sections+=Section)* '}'
 	//;
 	public FieldElements getFieldAccess() {
 		return pField;
@@ -608,8 +655,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Section:
-	//    assetNumber=ID
-	//    (pumps+=Pump)*
+	//    'section' name=ID '{' (pumps+=Pump)+ '}'
 	//;
 	public SectionElements getSectionAccess() {
 		return pSection;
@@ -620,7 +666,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Pump:
-	//    'P' assetNumber=ID
+	//    'pump' name=ID
 	//;
 	public PumpElements getPumpAccess() {
 		return pPump;
@@ -631,7 +677,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//AtomicExpression:
-	//    'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT
+	//    '(' 'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT ')'
 	//;
 	public AtomicExpressionElements getAtomicExpressionAccess() {
 		return pAtomicExpression;
@@ -642,7 +688,7 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//CompoundExpression:
-	//    '(' LHS=Expression operator=Operator RHS=Expression ')'
+	//     '(' LHS=Expression operator=Operator RHS=Expression ')'
 	//;
 	public CompoundExpressionElements getCompoundExpressionAccess() {
 		return pCompoundExpression;
@@ -672,6 +718,17 @@ public class IMSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public EnumRule getOperatorRule() {
 		return getOperatorAccess().getRule();
+	}
+	
+	//NumberedElementFQN:
+	//    ID ("." ID)*
+	//;
+	public NumberedElementFQNElements getNumberedElementFQNAccess() {
+		return pNumberedElementFQN;
+	}
+	
+	public ParserRule getNumberedElementFQNRule() {
+		return getNumberedElementFQNAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

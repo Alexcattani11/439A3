@@ -1,0 +1,53 @@
+grammar org.xtext.example.ims.IMS with org.eclipse.xtext.common.Terminals
+
+generate iMS "http://www.xtext.org/example/ims/IMS"
+
+IMS:
+	(fields+=Field)*
+	(irrigationRules+=IrrigationRule)*
+	(expressions+=Expression)*
+;
+	
+IrrigationRule:
+	'If' '(' expression=Expression ')' 'then' setting=WaterSetting 'for' (pumps+=[Pump] (',' pumps+=[Pump])*)+ 'for' duration=INT 'hour'
+;
+
+Expression:
+	AtomicExpression | CompoundExpression
+;
+
+Field:
+	'Field' name=ID (sections+=[Section|NumberedElementFQN])*
+;
+
+NumberedElement:
+	Field | Section | Pump
+;
+
+Section:
+	'section' name=ID (pumps+=[Pump|NumberedElementFQN])+
+;
+
+Pump:
+	'pump' name=ID
+;
+
+AtomicExpression:
+	'forecast' '=' forecastLowerBound=INT 'to' forecastUpperBound=INT '%' ',' field=[Field] '.moisture' '=' moistureLowerBound=INT 'to' moistureUpperBound=INT
+;
+
+CompoundExpression:
+	'(' LHS=Expression operator=Operator RHS=Expression ')'
+;
+
+enum WaterSetting :
+	LOW | MEDIUM | HIGH
+;
+
+enum Operator :
+	AND | OR
+;
+
+NumberedElementFQN:
+	ID ("." ID)*
+;

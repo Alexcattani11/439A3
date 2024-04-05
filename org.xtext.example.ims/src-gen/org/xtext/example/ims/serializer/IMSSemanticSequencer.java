@@ -88,11 +88,11 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IMSPackage.Literals.ATOMIC_EXPRESSION__MOISTURE_UPPER_BOUND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicExpressionAccess().getForecastLowerBoundINTTerminalRuleCall_2_0(), semanticObject.getForecastLowerBound());
-		feeder.accept(grammarAccess.getAtomicExpressionAccess().getForecastUpperBoundINTTerminalRuleCall_4_0(), semanticObject.getForecastUpperBound());
-		feeder.accept(grammarAccess.getAtomicExpressionAccess().getFieldFieldIDTerminalRuleCall_7_0_1(), semanticObject.eGet(IMSPackage.Literals.ATOMIC_EXPRESSION__FIELD, false));
-		feeder.accept(grammarAccess.getAtomicExpressionAccess().getMoistureLowerBoundINTTerminalRuleCall_10_0(), semanticObject.getMoistureLowerBound());
-		feeder.accept(grammarAccess.getAtomicExpressionAccess().getMoistureUpperBoundINTTerminalRuleCall_12_0(), semanticObject.getMoistureUpperBound());
+		feeder.accept(grammarAccess.getAtomicExpressionAccess().getForecastLowerBoundINTTerminalRuleCall_3_0(), semanticObject.getForecastLowerBound());
+		feeder.accept(grammarAccess.getAtomicExpressionAccess().getForecastUpperBoundINTTerminalRuleCall_5_0(), semanticObject.getForecastUpperBound());
+		feeder.accept(grammarAccess.getAtomicExpressionAccess().getFieldFieldIDTerminalRuleCall_8_0_1(), semanticObject.eGet(IMSPackage.Literals.ATOMIC_EXPRESSION__FIELD, false));
+		feeder.accept(grammarAccess.getAtomicExpressionAccess().getMoistureLowerBoundINTTerminalRuleCall_11_0(), semanticObject.getMoistureLowerBound());
+		feeder.accept(grammarAccess.getAtomicExpressionAccess().getMoistureUpperBoundINTTerminalRuleCall_13_0(), semanticObject.getMoistureUpperBound());
 		feeder.finish();
 	}
 	
@@ -131,7 +131,7 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NumberedElement returns Field
 	 *
 	 * Constraint:
-	 *     (assetNumber=ID sections+=Section*)
+	 *     (name=ID sections+=Section*)
 	 * </pre>
 	 */
 	protected void sequence_Field(ISerializationContext context, Field semanticObject) {
@@ -145,7 +145,7 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IMS returns IMS
 	 *
 	 * Constraint:
-	 *     ((irrigationRules+=IrrigationRule* expressions+=Expression+ fields+=Field+) | (irrigationRules+=IrrigationRule* fields+=Field+) | fields+=Field+)?
+	 *     ((fields+=Field* irrigationRules+=IrrigationRule+ expressions+=Expression+) | (fields+=Field* expressions+=Expression+) | expressions+=Expression+)?
 	 * </pre>
 	 */
 	protected void sequence_IMS(ISerializationContext context, IMS semanticObject) {
@@ -159,7 +159,7 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IrrigationRule returns IrrigationRule
 	 *
 	 * Constraint:
-	 *     (expression=Expression setting=WaterSetting (pumps+=[Pump|ID] pumps+=[Pump|ID]*)+ duration=INT)
+	 *     (expression=Expression setting=WaterSetting (pumps+=[Pump|NumberedElementFQN] pumps+=[Pump|NumberedElementFQN]*)+ duration=INT)
 	 * </pre>
 	 */
 	protected void sequence_IrrigationRule(ISerializationContext context, IrrigationRule semanticObject) {
@@ -174,16 +174,16 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Pump returns Pump
 	 *
 	 * Constraint:
-	 *     assetNumber=ID
+	 *     name=ID
 	 * </pre>
 	 */
 	protected void sequence_Pump(ISerializationContext context, Pump semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IMSPackage.Literals.NUMBERED_ELEMENT__ASSET_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IMSPackage.Literals.NUMBERED_ELEMENT__ASSET_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, IMSPackage.Literals.NUMBERED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IMSPackage.Literals.NUMBERED_ELEMENT__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPumpAccess().getAssetNumberIDTerminalRuleCall_1_0(), semanticObject.getAssetNumber());
+		feeder.accept(grammarAccess.getPumpAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -195,7 +195,7 @@ public class IMSSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Section returns Section
 	 *
 	 * Constraint:
-	 *     (assetNumber=ID pumps+=Pump*)
+	 *     (name=ID pumps+=Pump+)
 	 * </pre>
 	 */
 	protected void sequence_Section(ISerializationContext context, Section semanticObject) {

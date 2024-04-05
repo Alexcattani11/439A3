@@ -16,9 +16,9 @@
       <genEnumLiterals ecoreEnumLiteral="IMS.ecore#//Operator/OR"/>
     </genEnums>
     <genClasses ecoreClass="IMS.ecore#//IMS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//IMS/fields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//IMS/irrigationRules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//IMS/expressions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//IMS/fields"/>
     </genClasses>
     <genClasses ecoreClass="IMS.ecore#//IrrigationRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//IrrigationRule/expression"/>
@@ -31,7 +31,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//Field/sections"/>
     </genClasses>
     <genClasses ecoreClass="IMS.ecore#//NumberedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IMS.ecore#//NumberedElement/assetNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IMS.ecore#//NumberedElement/name"/>
     </genClasses>
     <genClasses ecoreClass="IMS.ecore#//Section">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IMS.ecore#//Section/pumps"/>

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.ims.iMS.NumberedElement#getAssetNumber <em>Asset Number</em>}</li>
+ *   <li>{@link org.xtext.example.ims.iMS.NumberedElement#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.ims.iMS.IMSPackage#getNumberedElement()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface NumberedElement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Asset Number</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Asset Number</em>' attribute.
-   * @see #setAssetNumber(String)
-   * @see org.xtext.example.ims.iMS.IMSPackage#getNumberedElement_AssetNumber()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.ims.iMS.IMSPackage#getNumberedElement_Name()
    * @model
    * @generated
    */
-  String getAssetNumber();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.ims.iMS.NumberedElement#getAssetNumber <em>Asset Number</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.ims.iMS.NumberedElement#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Asset Number</em>' attribute.
-   * @see #getAssetNumber()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setAssetNumber(String value);
+  void setName(String value);
 
 } // NumberedElement

@@ -188,7 +188,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
    * @generated
    */
   @Override
-  public EReference getIMS_IrrigationRules()
+  public EReference getIMS_Fields()
   {
     return (EReference)imsEClass.getEStructuralFeatures().get(0);
   }
@@ -199,7 +199,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
    * @generated
    */
   @Override
-  public EReference getIMS_Expressions()
+  public EReference getIMS_IrrigationRules()
   {
     return (EReference)imsEClass.getEStructuralFeatures().get(1);
   }
@@ -210,7 +210,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
    * @generated
    */
   @Override
-  public EReference getIMS_Fields()
+  public EReference getIMS_Expressions()
   {
     return (EReference)imsEClass.getEStructuralFeatures().get(2);
   }
@@ -320,7 +320,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
    * @generated
    */
   @Override
-  public EAttribute getNumberedElement_AssetNumber()
+  public EAttribute getNumberedElement_Name()
   {
     return (EAttribute)numberedElementEClass.getEStructuralFeatures().get(0);
   }
@@ -522,9 +522,9 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
 
     // Create classes and their features
     imsEClass = createEClass(IMS);
+    createEReference(imsEClass, IMS__FIELDS);
     createEReference(imsEClass, IMS__IRRIGATION_RULES);
     createEReference(imsEClass, IMS__EXPRESSIONS);
-    createEReference(imsEClass, IMS__FIELDS);
 
     irrigationRuleEClass = createEClass(IRRIGATION_RULE);
     createEReference(irrigationRuleEClass, IRRIGATION_RULE__EXPRESSION);
@@ -538,7 +538,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
     createEReference(fieldEClass, FIELD__SECTIONS);
 
     numberedElementEClass = createEClass(NUMBERED_ELEMENT);
-    createEAttribute(numberedElementEClass, NUMBERED_ELEMENT__ASSET_NUMBER);
+    createEAttribute(numberedElementEClass, NUMBERED_ELEMENT__NAME);
 
     sectionEClass = createEClass(SECTION);
     createEReference(sectionEClass, SECTION__PUMPS);
@@ -599,9 +599,9 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(imsEClass, org.xtext.example.ims.iMS.IMS.class, "IMS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIMS_Fields(), this.getField(), null, "fields", null, 0, -1, org.xtext.example.ims.iMS.IMS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIMS_IrrigationRules(), this.getIrrigationRule(), null, "irrigationRules", null, 0, -1, org.xtext.example.ims.iMS.IMS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIMS_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, org.xtext.example.ims.iMS.IMS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIMS_Fields(), this.getField(), null, "fields", null, 0, -1, org.xtext.example.ims.iMS.IMS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(irrigationRuleEClass, IrrigationRule.class, "IrrigationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIrrigationRule_Expression(), this.getExpression(), null, "expression", null, 0, 1, IrrigationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -615,7 +615,7 @@ public class IMSPackageImpl extends EPackageImpl implements IMSPackage
     initEReference(getField_Sections(), this.getSection(), null, "sections", null, 0, -1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numberedElementEClass, NumberedElement.class, "NumberedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNumberedElement_AssetNumber(), ecorePackage.getEString(), "assetNumber", null, 0, 1, NumberedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNumberedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NumberedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSection_Pumps(), this.getPump(), null, "pumps", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

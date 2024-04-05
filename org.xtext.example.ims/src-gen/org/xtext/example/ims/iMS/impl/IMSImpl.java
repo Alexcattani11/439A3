@@ -31,15 +31,25 @@ import org.xtext.example.ims.iMS.IrrigationRule;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.ims.iMS.impl.IMSImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link org.xtext.example.ims.iMS.impl.IMSImpl#getIrrigationRules <em>Irrigation Rules</em>}</li>
  *   <li>{@link org.xtext.example.ims.iMS.impl.IMSImpl#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.xtext.example.ims.iMS.impl.IMSImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
 {
+  /**
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFields()
+   * @generated
+   * @ordered
+   */
+  protected EList<Field> fields;
+
   /**
    * The cached value of the '{@link #getIrrigationRules() <em>Irrigation Rules</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -61,16 +71,6 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   protected EList<Expression> expressions;
 
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFields()
-   * @generated
-   * @ordered
-   */
-  protected EList<Field> fields;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -89,6 +89,21 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   protected EClass eStaticClass()
   {
     return IMSPackage.Literals.IMS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Field> getFields()
+  {
+    if (fields == null)
+    {
+      fields = new EObjectContainmentEList<Field>(Field.class, this, IMSPackage.IMS__FIELDS);
+    }
+    return fields;
   }
 
   /**
@@ -127,31 +142,16 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
    * @generated
    */
   @Override
-  public EList<Field> getFields()
-  {
-    if (fields == null)
-    {
-      fields = new EObjectContainmentEList<Field>(Field.class, this, IMSPackage.IMS__FIELDS);
-    }
-    return fields;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case IMSPackage.IMS__FIELDS:
+        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
       case IMSPackage.IMS__IRRIGATION_RULES:
         return ((InternalEList<?>)getIrrigationRules()).basicRemove(otherEnd, msgs);
       case IMSPackage.IMS__EXPRESSIONS:
         return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
-      case IMSPackage.IMS__FIELDS:
-        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -166,12 +166,12 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   {
     switch (featureID)
     {
+      case IMSPackage.IMS__FIELDS:
+        return getFields();
       case IMSPackage.IMS__IRRIGATION_RULES:
         return getIrrigationRules();
       case IMSPackage.IMS__EXPRESSIONS:
         return getExpressions();
-      case IMSPackage.IMS__FIELDS:
-        return getFields();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,6 +187,10 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   {
     switch (featureID)
     {
+      case IMSPackage.IMS__FIELDS:
+        getFields().clear();
+        getFields().addAll((Collection<? extends Field>)newValue);
+        return;
       case IMSPackage.IMS__IRRIGATION_RULES:
         getIrrigationRules().clear();
         getIrrigationRules().addAll((Collection<? extends IrrigationRule>)newValue);
@@ -194,10 +198,6 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
       case IMSPackage.IMS__EXPRESSIONS:
         getExpressions().clear();
         getExpressions().addAll((Collection<? extends Expression>)newValue);
-        return;
-      case IMSPackage.IMS__FIELDS:
-        getFields().clear();
-        getFields().addAll((Collection<? extends Field>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,14 +213,14 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   {
     switch (featureID)
     {
+      case IMSPackage.IMS__FIELDS:
+        getFields().clear();
+        return;
       case IMSPackage.IMS__IRRIGATION_RULES:
         getIrrigationRules().clear();
         return;
       case IMSPackage.IMS__EXPRESSIONS:
         getExpressions().clear();
-        return;
-      case IMSPackage.IMS__FIELDS:
-        getFields().clear();
         return;
     }
     super.eUnset(featureID);
@@ -236,12 +236,12 @@ public class IMSImpl extends MinimalEObjectImpl.Container implements IMS
   {
     switch (featureID)
     {
+      case IMSPackage.IMS__FIELDS:
+        return fields != null && !fields.isEmpty();
       case IMSPackage.IMS__IRRIGATION_RULES:
         return irrigationRules != null && !irrigationRules.isEmpty();
       case IMSPackage.IMS__EXPRESSIONS:
         return expressions != null && !expressions.isEmpty();
-      case IMSPackage.IMS__FIELDS:
-        return fields != null && !fields.isEmpty();
     }
     return super.eIsSet(featureID);
   }

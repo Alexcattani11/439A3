@@ -21,7 +21,7 @@ import org.xtext.example.ims.iMS.NumberedElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.ims.iMS.impl.NumberedElementImpl#getAssetNumber <em>Asset Number</em>}</li>
+ *   <li>{@link org.xtext.example.ims.iMS.impl.NumberedElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.example.ims.iMS.NumberedElement;
 public class NumberedElementImpl extends MinimalEObjectImpl.Container implements NumberedElement
 {
   /**
-   * The default value of the '{@link #getAssetNumber() <em>Asset Number</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssetNumber()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ASSET_NUMBER_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAssetNumber() <em>Asset Number</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssetNumber()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String assetNumber = ASSET_NUMBER_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public String getAssetNumber()
+  public String getName()
   {
-    return assetNumber;
+    return name;
   }
 
   /**
@@ -86,12 +86,12 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setAssetNumber(String newAssetNumber)
+  public void setName(String newName)
   {
-    String oldAssetNumber = assetNumber;
-    assetNumber = newAssetNumber;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IMSPackage.NUMBERED_ELEMENT__ASSET_NUMBER, oldAssetNumber, assetNumber));
+      eNotify(new ENotificationImpl(this, Notification.SET, IMSPackage.NUMBERED_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -104,8 +104,8 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case IMSPackage.NUMBERED_ELEMENT__ASSET_NUMBER:
-        return getAssetNumber();
+      case IMSPackage.NUMBERED_ELEMENT__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case IMSPackage.NUMBERED_ELEMENT__ASSET_NUMBER:
-        setAssetNumber((String)newValue);
+      case IMSPackage.NUMBERED_ELEMENT__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case IMSPackage.NUMBERED_ELEMENT__ASSET_NUMBER:
-        setAssetNumber(ASSET_NUMBER_EDEFAULT);
+      case IMSPackage.NUMBERED_ELEMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case IMSPackage.NUMBERED_ELEMENT__ASSET_NUMBER:
-        return ASSET_NUMBER_EDEFAULT == null ? assetNumber != null : !ASSET_NUMBER_EDEFAULT.equals(assetNumber);
+      case IMSPackage.NUMBERED_ELEMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class NumberedElementImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (assetNumber: ");
-    result.append(assetNumber);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

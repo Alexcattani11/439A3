@@ -69,13 +69,22 @@ public interface IMSPackage extends EPackage
   int IMS = 0;
 
   /**
+   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMS__FIELDS = 0;
+
+  /**
    * The feature id for the '<em><b>Irrigation Rules</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMS__IRRIGATION_RULES = 0;
+  int IMS__IRRIGATION_RULES = 1;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -84,16 +93,7 @@ public interface IMSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMS__EXPRESSIONS = 1;
-
-  /**
-   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMS__FIELDS = 2;
+  int IMS__EXPRESSIONS = 2;
 
   /**
    * The number of structural features of the '<em>IMS</em>' class.
@@ -189,13 +189,13 @@ public interface IMSPackage extends EPackage
   int NUMBERED_ELEMENT = 4;
 
   /**
-   * The feature id for the '<em><b>Asset Number</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBERED_ELEMENT__ASSET_NUMBER = 0;
+  int NUMBERED_ELEMENT__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Numbered Element</em>' class.
@@ -217,13 +217,13 @@ public interface IMSPackage extends EPackage
   int FIELD = 3;
 
   /**
-   * The feature id for the '<em><b>Asset Number</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FIELD__ASSET_NUMBER = NUMBERED_ELEMENT__ASSET_NUMBER;
+  int FIELD__NAME = NUMBERED_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Sections</b></em>' containment reference list.
@@ -254,13 +254,13 @@ public interface IMSPackage extends EPackage
   int SECTION = 5;
 
   /**
-   * The feature id for the '<em><b>Asset Number</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SECTION__ASSET_NUMBER = NUMBERED_ELEMENT__ASSET_NUMBER;
+  int SECTION__NAME = NUMBERED_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Pumps</b></em>' containment reference list.
@@ -291,13 +291,13 @@ public interface IMSPackage extends EPackage
   int PUMP = 6;
 
   /**
-   * The feature id for the '<em><b>Asset Number</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PUMP__ASSET_NUMBER = NUMBERED_ELEMENT__ASSET_NUMBER;
+  int PUMP__NAME = NUMBERED_ELEMENT__NAME;
 
   /**
    * The number of structural features of the '<em>Pump</em>' class.
@@ -450,6 +450,17 @@ public interface IMSPackage extends EPackage
   EClass getIMS();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.ims.iMS.IMS#getFields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
+   * @see org.xtext.example.ims.iMS.IMS#getFields()
+   * @see #getIMS()
+   * @generated
+   */
+  EReference getIMS_Fields();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.ims.iMS.IMS#getIrrigationRules <em>Irrigation Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -470,17 +481,6 @@ public interface IMSPackage extends EPackage
    * @generated
    */
   EReference getIMS_Expressions();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.ims.iMS.IMS#getFields <em>Fields</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fields</em>'.
-   * @see org.xtext.example.ims.iMS.IMS#getFields()
-   * @see #getIMS()
-   * @generated
-   */
-  EReference getIMS_Fields();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.ims.iMS.IrrigationRule <em>Irrigation Rule</em>}'.
@@ -578,15 +578,15 @@ public interface IMSPackage extends EPackage
   EClass getNumberedElement();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.ims.iMS.NumberedElement#getAssetNumber <em>Asset Number</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.ims.iMS.NumberedElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Asset Number</em>'.
-   * @see org.xtext.example.ims.iMS.NumberedElement#getAssetNumber()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.ims.iMS.NumberedElement#getName()
    * @see #getNumberedElement()
    * @generated
    */
-  EAttribute getNumberedElement_AssetNumber();
+  EAttribute getNumberedElement_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.ims.iMS.Section <em>Section</em>}'.
@@ -781,6 +781,14 @@ public interface IMSPackage extends EPackage
     EClass IMS = eINSTANCE.getIMS();
 
     /**
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMS__FIELDS = eINSTANCE.getIMS_Fields();
+
+    /**
      * The meta object literal for the '<em><b>Irrigation Rules</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -795,14 +803,6 @@ public interface IMSPackage extends EPackage
      * @generated
      */
     EReference IMS__EXPRESSIONS = eINSTANCE.getIMS_Expressions();
-
-    /**
-     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IMS__FIELDS = eINSTANCE.getIMS_Fields();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.ims.iMS.impl.IrrigationRuleImpl <em>Irrigation Rule</em>}' class.
@@ -885,12 +885,12 @@ public interface IMSPackage extends EPackage
     EClass NUMBERED_ELEMENT = eINSTANCE.getNumberedElement();
 
     /**
-     * The meta object literal for the '<em><b>Asset Number</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMBERED_ELEMENT__ASSET_NUMBER = eINSTANCE.getNumberedElement_AssetNumber();
+    EAttribute NUMBERED_ELEMENT__NAME = eINSTANCE.getNumberedElement_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.ims.iMS.impl.SectionImpl <em>Section</em>}' class.
