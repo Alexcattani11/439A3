@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+			<h2>Field: F1</h2>
+				<h4>Section: S101</h4>
+					<p>Pump: P101</p>
+					<p>Pump: P102</p>
+				<h4>Section: S102</h4>
+					<p>Pump: P103</p>
+			<h2>Field: F2</h2>
+				<h4>Section: S201</h4>
+					<p>Pump: P201</p>
+					<p>Pump: P202</p>
+					<p>Pump: P203</p>
+				<h4>Section: S202</h4>
+					<p>Pump: P204</p>
+				<h4>Section: S203</h4>
+					<p>Pump: P205</p>
+			<h2>Field: F3</h2>
+				<h4>Section: S301</h4>
+					<p>Pump: P301</p>
+				<h4>Section: S302</h4>
+					<p>Pump: P302</p>
+				<h4>Section: S303</h4>
+					<p>Pump: P303</p>
+				<h4>Section: S304</h4>
+					<p>Pump: P304</p>
+			<h2>Field: F4</h2>
+				<h4>Section: S401</h4>
+					<p>Pump: P401</p>
+					<p>Pump: P402</p>
+
+		<h1>Irrigation Rules</h1>
+			<p>Irrigation Rules: If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for  P101 ,  P102 ,  P103  for 2 hour(s)  </p>
+			<p>Irrigation Rules: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>
+			<p>Irrigation Rules: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>
+			<p>Irrigation Rules: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>
+	</body>
+</html>
