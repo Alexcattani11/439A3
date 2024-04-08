@@ -1,0 +1,54 @@
+[comment encoding = UTF-8 /]
+[module generate('https://ca.mcgill.emf.examples')]
+
+
+[template public generateIMS(ims : IMS)]
+[comment @main/]
+[file('ims.txt.', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+		[for (field : Field | ims.fields)]
+			<h2>Field: [field.assetNumber/]</h2>
+			[for (section : Section | field.sections)]
+				<h4>Section: [section.assetNumber/]</h4>
+				[for (pump : Pump | section.pumps)]
+					<p>Pump: [pump.assetNumber/]</p>
+				[/for]
+			[/for]
+		[/for]
+
+		<h1>Irrigation Rules</h1>
+		[for (anExpression : Expression | ims.expressions)]
+			Expression: [expression()/]
+		[/for]	
+	</body>
+</html>
+[/file]
+[/template]
+
+[template public irrigationRule(aIrrigationRule : IrrigationRule)]
+If
+[/template]
+
+[template public expression(anExpression : Expression)]
+[if (anExpression.oclIsTypeOf(AtomicExpression))] 
+	[atomicExpression(anExpression.oclAsType(AtomicExpression))/]
+[else]
+	[compoundExpression(anExpression.oclAsType(CompoundExpression))/]
+[/if]
+[/template]
+
+[template public compoundExpression(anExpression : CompoundExpression)]
+([expression(anExpression.LHS)/] [anExpression.operator/] [expression(anExpression.RHS)/])
+[/template]
+
+[template public atomicExpression(anExpression : AtomicExpression)]
+forecast = [anExpression.forecastLowerBound/] to [anExpression.forecastUpperBound/]%, [anExpression.field.assetNumber/].moisture = [anExpression.moistureLowerBound/] to [anExpression.moistureUpperBound/]
+[/template]

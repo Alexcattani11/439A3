@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module generate('https://ca.mcgill.emf.examples')]
+
+
+[template public generateIMS(ims : IMS)]
+[comment @main/]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+		[for (field : Field | ims.fields)]
+			<h2>Field: [field.assetNumber/]</h2>
+			[for (section : Section | field.sections)]
+				<h4>Section: [section.assetNumber/]</h4>
+				[for (pump : Pump | section.pumps)]
+					<p>Pump: [pump.assetNumber/]</p>
+				[/for]
+			[/for]
+		[/for]
+
+		<h1>Irrigation Rules</h1>
+		[for (irrigationRule : IrrigationRule | ims.irrigationRules)]
+			<p>[='If '+irrigationRule.expression+' then '+irrigationRule.setting+' for '+irrigationRule.pumps+' for '+irrigationRule.duration+' hour(s)'/]</p>
+		[/for]	
+	</body>
+</html>
+[/template]
+
+[template public irrigationRule(aIrrigationRule : IrrigationRule)]
+If
+[/template]
+
+[template public expression(aExpression : Expression)]
+
+[/template]

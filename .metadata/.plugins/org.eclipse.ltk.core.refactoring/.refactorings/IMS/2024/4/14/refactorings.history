@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;assignment2.ims&apos; to &apos;examples&apos;&#x0D;&#x0A;- Original project: &apos;IMS&apos;&#x0D;&#x0A;- Destination element: &apos;examples&apos;&#x0D;&#x0A;- Original element: &apos;assignment2.ims&apos;" description="Copy file" element1="examples/assignment2.ims" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1712447830152" target="/org.eclipse.acceleo.module.IMS/examples" units="0" version="1.0"/>
+</session>

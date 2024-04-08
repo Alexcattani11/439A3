@@ -1,0 +1,85 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.xtext.org/example/ims/IMS')]
+
+
+[template public generateIMS(ims : IMS)]
+[comment @main/]
+[file('ims.html.', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+		<script>
+            function showSection() {
+				var fields = document.getElementById("fields");
+				var displayContainer = document.getElementById("displayContainer");
+				var selectedField = fields.options[ '[' /]fields.selectedIndex[ ']' /].value;
+
+				console.log(selectedField);
+
+				[for (field : Field | ims.fields)] 
+				console.log(selectedField === "[field.name/]");
+				if (selectedField === "[field.name/]") {
+					displayContainer.innerHTML = [generateSections(field)/];
+					console.log(displayContainer.innerHTML);
+				}
+				[/for]
+			}
+        </script>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+		<label for="fields">Select a field:</label>
+		<select name="fields" id="fields" onchange="showSection()">
+			[for (field : Field | ims.fields)]
+				<option value="[field.name/]">[field.name/]</option>
+			[/for]
+		</select>
+
+		<div id="displayContainer">
+			
+		</div>
+
+
+[comment]					[for (section : Section | field.sections)]
+						<h4>Section: [section.assetNumber/]</h4>
+						[for (pump : Pump | section.pumps)]
+							<div class="imsContent">
+								<p>Pump: [pump.assetNumber/]</p>
+							</div>
+						[/for]
+					[/for][/comment]
+
+		<h1>Irrigation Rules</h1>
+		[for (anIrrigationRule : IrrigationRule | ims.irrigationRules)]
+			<p>Irrigation Rules: [irrigationRule()/]</p>
+		[/for]	
+	</body>
+</html>
+[/file]
+[/template]
+
+[template public irrigationRule(aIrrigationRule : IrrigationRule)]
+If [expression(aIrrigationRule.expression)/] then [aIrrigationRule.setting/] for [for (aPump : Pump | aIrrigationRule.pumps) separator(', ')] [aPump.name/] [/for] for [aIrrigationRule.duration/] hour(s)  
+[/template]
+
+[template public expression(anExpression : Expression)]
+[if (anExpression.oclIsTypeOf(AtomicExpression))][atomicExpression(anExpression.oclAsType(AtomicExpression))/][else][compoundExpression(anExpression.oclAsType(CompoundExpression))/][/if]
+[/template]
+
+[template public compoundExpression(anExpression : CompoundExpression)]
+([expression(anExpression.LHS)/] [anExpression.operator/] [expression(anExpression.RHS)/])
+[/template]
+
+[template public atomicExpression(anExpression : AtomicExpression)]
+(forecast = [anExpression.forecastLowerBound/] to [anExpression.forecastUpperBound/]%, [anExpression.field.name/].moisture = [anExpression.moistureLowerBound/] to [anExpression.moistureUpperBound/])
+[/template]
+
+[template public generateSections(field : Field)]
+    [for (section : Section | field.sections)]
+		[if (section.oclIsUndefined())][/if]
+        '<p>Section: [section.name/]</p>'
+    [/for]
+[/template]

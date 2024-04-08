@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;org.eclipse.acceleo.module.IMS&apos;&#x0D;&#x0A;- Original project: &apos;org.eclipse.acceleo.module.IMS&apos;&#x0D;&#x0A;- Original element: &apos;TestValid.xmi&apos;" description="Delete element" element1="examples/TestValid.xmi" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1712446452530" subPackages="false" version="1.0"/>
+</session>

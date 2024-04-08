@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+		<script>
+            function showSectionFields() {
+				var fields = document.getElementById("fields");
+				var displayContainer = document.getElementById("displayContainer");
+				var selectedField = fields.options[fields.selectedIndex].value;
+
+				displayContainer.innerHTML = "";
+
+				if (selectedField === "F1") {
+						
+									displayContainer.innerHTML += "<p>Irrigation Rule: If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for  P101 ,  P102 ,  P103  for 1 hour(s)  </p>";
+						
+						
+								
+								
+								
+								
+						
+						
+								
+										
+										
+										
+										
+								
+								
+								
+						
+						
+								
+										
+										
+										
+												
+															displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+												
+												
+												
+										
+								
+								
+											displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+								
+						
+				}
+				if (selectedField === "F2") {
+						
+						
+						
+								
+											displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+								
+								
+											displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+								
+						
+						
+								
+										
+										
+										
+										
+								
+								
+								
+						
+						
+								
+										
+													displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+										
+										
+												
+												
+												
+												
+										
+								
+								
+								
+						
+				}
+				if (selectedField === "F3") {
+						
+						
+						
+								
+								
+								
+								
+						
+						
+								
+										
+													displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+										
+										
+										
+								
+								
+								
+						
+						
+								
+										
+										
+										
+												
+												
+												
+															displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+												
+										
+								
+								
+								
+						
+				}
+				if (selectedField === "F4") {
+						
+						
+						
+								
+								
+								
+								
+						
+						
+								
+										
+										
+										
+													displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+										
+								
+								
+											displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+								
+						
+						
+								
+										
+										
+										
+												
+												
+												
+												
+										
+								
+								
+								
+						
+				}
+				if (selectedField === "F5") {
+						
+						
+						
+								
+								
+								
+								
+						
+						
+								
+										
+										
+										
+										
+								
+								
+								
+						
+						
+								
+										
+										
+										
+												
+												
+												
+												
+										
+								
+								
+								
+						
+				}
+				
+			}
+
+			function showSectionPumps() {
+				var displayContainer = document.getElementById("displayContainer");
+				
+				var pumps = document.getElementById("pumps");
+				var selectedPump = pumps.options[pumps.selectedIndex].value;
+
+				displayContainer.innerHTML = "";
+
+						if (selectedPump === "P101") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for  P101 ,  P102 ,  P103  for 1 hour(s)  </p>";
+						}
+						if (selectedPump === "P102") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for  P101 ,  P102 ,  P103  for 1 hour(s)  </p>";
+						}
+						if (selectedPump === "P103") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for  P101 ,  P102 ,  P103  for 1 hour(s)  </p>";
+						}
+				
+						if (selectedPump === "P201") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+						}
+						if (selectedPump === "P202") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+						}
+						if (selectedPump === "P203") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+						}
+						if (selectedPump === "P204") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then HIGH for  P201 ,  P202 ,  P203 ,  P204  for 3 hour(s)  </p>";
+						}
+				
+						if (selectedPump === "P401") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+						}
+						if (selectedPump === "P402") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+						}
+						if (selectedPump === "P301") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30)) OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for  P401 ,  P402 ,  P301  for 2 hour(s)  </p>";
+						}
+				
+						if (selectedPump === "P101") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P102") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P201") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P205") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P302") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P303") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+						if (selectedPump === "P304") {
+							displayContainer.innerHTML += "<p>Irrigation Rule: If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR (forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then MEDIUM for  P101 ,  P102 ,  P201 ,  P205 ,  P302 ,  P303 ,  P304  for 12 hour(s)  </p>";
+						}
+				
+			}
+        </script>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+		<label for="fields">Select a field:</label>
+		<select name="fields" id="fields" onchange="showSectionFields()">
+				<option value="F1">F1</option>
+				<option value="F2">F2</option>
+				<option value="F3">F3</option>
+				<option value="F4">F4</option>
+				<option value="F5">F5</option>
+		</select>
+
+		<label for="pumps">Select a pump:</label>
+		<select name="pumps" id="pumps" onchange="showSectionPumps()">
+					<option value="P101">P101</option>
+					<option value="P102">P102</option>
+					<option value="P103">P103</option>
+					<option value="P201">P201</option>
+					<option value="P202">P202</option>
+					<option value="P203">P203</option>
+					<option value="P204">P204</option>
+					<option value="P401">P401</option>
+					<option value="P402">P402</option>
+					<option value="P301">P301</option>
+					<option value="P101">P101</option>
+					<option value="P102">P102</option>
+					<option value="P201">P201</option>
+					<option value="P205">P205</option>
+					<option value="P302">P302</option>
+					<option value="P303">P303</option>
+					<option value="P304">P304</option>
+		</select>
+
+		<div id="displayContainer">
+		</div>
+
+	</body>
+</html>

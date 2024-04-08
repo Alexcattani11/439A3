@@ -1,0 +1,70 @@
+[comment encoding = UTF-8 /]
+[module generate('https://ca.mcgill.emf.examples')]
+
+
+[template public generateIMS(ims : IMS)]
+[comment @main/]
+[file('ims.html.', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Irrigation Management System</title>
+		<script>
+            function filterContent() {
+                //Get the value of the filter field
+                var filterValue = document.getElementById("filterField").value;
+
+                //get all the divs containing the tags
+                var divs = document.getElementsByClassName("imsContent");
+
+                //loop through the divs to find the match
+                for (var i = 0; i < divs.length; i++) {
+                    if (divs[ '[' /]i].innerHTML.indexOf(filterValue) >= 0) {
+                      divs[ '[' /]i].style.display = "block";
+                    } else {
+                      divs[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+    	<h1>Fields, Sections, and Pumps</h1>
+
+		[for (field : Field | ims.fields)]
+			<h2>Field: [field.assetNumber/]</h2>
+			[for (section : Section | field.sections)]
+				<h4>Section: [section.assetNumber/]</h4>
+				[for (pump : Pump | section.pumps)]
+					<div class="imsContent">
+						<p>Pump: [pump.assetNumber/]</p>
+					</div>
+				[/for]
+			[/for]
+		[/for]
+
+		<h1>Irrigation Rules</h1>
+		[for (anIrrigationRule : IrrigationRule | ims.irrigationRules)]
+			<p>Irrigation Rules: [irrigationRule()/]</p>
+		[/for]	
+	</body>
+</html>
+[/file]
+[/template]
+
+[template public irrigationRule(aIrrigationRule : IrrigationRule)]
+If [expression(aIrrigationRule.expression)/] then [aIrrigationRule.setting/] for [for (aPump : Pump | aIrrigationRule.pumps) separator(', ')] [aPump.assetNumber/] [/for] for [aIrrigationRule.duration/] hour(s)  
+[/template]
+
+[template public expression(anExpression : Expression)]
+[if (anExpression.oclIsTypeOf(AtomicExpression))][atomicExpression(anExpression.oclAsType(AtomicExpression))/][else][compoundExpression(anExpression.oclAsType(CompoundExpression))/][/if]
+[/template]
+
+[template public compoundExpression(anExpression : CompoundExpression)]
+([expression(anExpression.LHS)/] [anExpression.operator/] [expression(anExpression.RHS)/])
+[/template]
+
+[template public atomicExpression(anExpression : AtomicExpression)]
+(forecast = [anExpression.forecastLowerBound/] to [anExpression.forecastUpperBound/]%, [anExpression.field.assetNumber/].moisture = [anExpression.moistureLowerBound/] to [anExpression.moistureUpperBound/])
+[/template]

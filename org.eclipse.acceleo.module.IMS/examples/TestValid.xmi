@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iMS:IMS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iMS="http://www.xtext.org/example/ims/IMS">
+  <fields name="F1">
+    <sections name="S1">
+      <pumps name="P101"/>
+      <pumps name="P102"/>
+    </sections>
+    <sections name="S2">
+      <pumps name="P103"/>
+    </sections>
+  </fields>
+  <fields name="F2">
+    <sections name="S3">
+      <pumps name="P201"/>
+      <pumps name="P202"/>
+      <pumps name="P203"/>
+      <pumps name="P204"/>
+      <pumps name="P205"/>
+    </sections>
+  </fields>
+  <fields name="F3">
+    <sections name="S4">
+      <pumps name="P301"/>
+      <pumps name="P302"/>
+      <pumps name="P401"/>
+      <pumps name="P402"/>
+    </sections>
+  </fields>
+  <fields name="F4">
+    <sections name="S5">
+      <pumps name="P303"/>
+      <pumps name="P304"/>
+    </sections>
+  </fields>
+  <fields name="F5"/>
+  <irrigationRules setting="HIGH" pumps="//@fields.0/@sections.0/@pumps.0 //@fields.0/@sections.0/@pumps.1 //@fields.0/@sections.1/@pumps.0" duration="1">
+    <expression xsi:type="iMS:AtomicExpression" field="//@fields.0" moistureUpperBound="20"/>
+  </irrigationRules>
+  <irrigationRules setting="HIGH" pumps="//@fields.1/@sections.0/@pumps.0 //@fields.1/@sections.0/@pumps.1 //@fields.1/@sections.0/@pumps.2 //@fields.1/@sections.0/@pumps.3" duration="3">
+    <expression xsi:type="iMS:CompoundExpression" operator="OR">
+      <LHS xsi:type="iMS:AtomicExpression" field="//@fields.1" moistureUpperBound="20"/>
+      <RHS xsi:type="iMS:AtomicExpression" forecastLowerBound="10" forecastUpperBound="20" field="//@fields.1" moistureLowerBound="20" moistureUpperBound="30"/>
+    </expression>
+  </irrigationRules>
+  <irrigationRules pumps="//@fields.2/@sections.0/@pumps.2 //@fields.2/@sections.0/@pumps.3 //@fields.2/@sections.0/@pumps.0" duration="2">
+    <expression xsi:type="iMS:CompoundExpression" operator="OR">
+      <LHS xsi:type="iMS:CompoundExpression">
+        <LHS xsi:type="iMS:AtomicExpression" forecastLowerBound="50" forecastUpperBound="100" field="//@fields.2" moistureUpperBound="20"/>
+        <RHS xsi:type="iMS:AtomicExpression" forecastLowerBound="50" forecastUpperBound="75" field="//@fields.3" moistureLowerBound="20" moistureUpperBound="30"/>
+      </LHS>
+      <RHS xsi:type="iMS:AtomicExpression" forecastLowerBound="60" forecastUpperBound="90" field="//@fields.3" moistureUpperBound="20"/>
+    </expression>
+  </irrigationRules>
+  <irrigationRules setting="MEDIUM" pumps="//@fields.0/@sections.0/@pumps.0 //@fields.0/@sections.0/@pumps.1 //@fields.1/@sections.0/@pumps.0 //@fields.1/@sections.0/@pumps.4 //@fields.2/@sections.0/@pumps.1 //@fields.3/@sections.0/@pumps.0 //@fields.3/@sections.0/@pumps.1" duration="12">
+    <expression xsi:type="iMS:CompoundExpression" operator="OR">
+      <LHS xsi:type="iMS:CompoundExpression">
+        <LHS xsi:type="iMS:AtomicExpression" forecastLowerBound="5" forecastUpperBound="10" field="//@fields.1" moistureUpperBound="20"/>
+        <RHS xsi:type="iMS:CompoundExpression" operator="OR">
+          <LHS xsi:type="iMS:AtomicExpression" forecastLowerBound="5" forecastUpperBound="15" field="//@fields.0" moistureLowerBound="20" moistureUpperBound="30"/>
+          <RHS xsi:type="iMS:AtomicExpression" forecastLowerBound="5" forecastUpperBound="15" field="//@fields.2" moistureLowerBound="20" moistureUpperBound="30"/>
+        </RHS>
+      </LHS>
+      <RHS xsi:type="iMS:AtomicExpression" forecastLowerBound="6" forecastUpperBound="9" field="//@fields.0" moistureUpperBound="20"/>
+    </expression>
+  </irrigationRules>
+</iMS:IMS>

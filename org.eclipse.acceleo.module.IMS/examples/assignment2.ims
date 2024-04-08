@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ims:IMS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ims="https://ca.mcgill.emf.examples" xmi:id="_P-c3IMnCEe6h7J93KZxaig">
+  <fields xmi:id="_P-iWsMnCEe6h7J93KZxaig" assetNumber="F1" moistureLevel="35">
+    <sections xmi:id="_P-iWscnCEe6h7J93KZxaig" assetNumber="S101">
+      <pumps xmi:id="_P-iWssnCEe6h7J93KZxaig" assetNumber="P101"/>
+      <pumps xmi:id="_P-iWs8nCEe6h7J93KZxaig" assetNumber="P102"/>
+    </sections>
+    <sections xmi:id="_P-iWtMnCEe6h7J93KZxaig" assetNumber="S102">
+      <pumps xmi:id="_P-iWtcnCEe6h7J93KZxaig" assetNumber="P103"/>
+    </sections>
+  </fields>
+  <fields xmi:id="_P-iWtsnCEe6h7J93KZxaig" assetNumber="F2" moistureLevel="80">
+    <sections xmi:id="_P-iWt8nCEe6h7J93KZxaig" assetNumber="S201">
+      <pumps xmi:id="_P-iWuMnCEe6h7J93KZxaig" assetNumber="P201"/>
+      <pumps xmi:id="_P-iWucnCEe6h7J93KZxaig" assetNumber="P202"/>
+      <pumps xmi:id="_P-iWusnCEe6h7J93KZxaig" assetNumber="P203"/>
+    </sections>
+    <sections xmi:id="_P-iWu8nCEe6h7J93KZxaig" assetNumber="S202">
+      <pumps xmi:id="_P-iWvMnCEe6h7J93KZxaig" assetNumber="P204"/>
+    </sections>
+    <sections xmi:id="_P-iWvcnCEe6h7J93KZxaig" assetNumber="S203">
+      <pumps xmi:id="_P-iWvsnCEe6h7J93KZxaig" assetNumber="P205"/>
+    </sections>
+  </fields>
+  <fields xmi:id="_P-iWv8nCEe6h7J93KZxaig" assetNumber="F3" moistureLevel="10">
+    <sections xmi:id="_P-iWwMnCEe6h7J93KZxaig" assetNumber="S301">
+      <pumps xmi:id="_P-iWwcnCEe6h7J93KZxaig" assetNumber="P301"/>
+    </sections>
+    <sections xmi:id="_P-iWwsnCEe6h7J93KZxaig" assetNumber="S302">
+      <pumps xmi:id="_P-iWw8nCEe6h7J93KZxaig" assetNumber="P302"/>
+    </sections>
+    <sections xmi:id="_P-iWxMnCEe6h7J93KZxaig" assetNumber="S303">
+      <pumps xmi:id="_P-iWxcnCEe6h7J93KZxaig" assetNumber="P303"/>
+    </sections>
+    <sections xmi:id="_P-iWxsnCEe6h7J93KZxaig" assetNumber="S304">
+      <pumps xmi:id="_P-iWx8nCEe6h7J93KZxaig" assetNumber="P304"/>
+    </sections>
+  </fields>
+  <fields xmi:id="_P-iWyMnCEe6h7J93KZxaig" assetNumber="F4" moistureLevel="5">
+    <sections xmi:id="_P-iWycnCEe6h7J93KZxaig" assetNumber="S401">
+      <pumps xmi:id="_P-iWysnCEe6h7J93KZxaig" assetNumber="P401"/>
+      <pumps xmi:id="_P-iWy8nCEe6h7J93KZxaig" assetNumber="P402"/>
+    </sections>
+  </fields>
+  <irrigationRules xmi:id="_P-iWzMnCEe6h7J93KZxaig" setting="HIGH" duration="2" pumps="_P-iWssnCEe6h7J93KZxaig _P-iWs8nCEe6h7J93KZxaig _P-iWtcnCEe6h7J93KZxaig" expression="_P-iW0MnCEe6h7J93KZxaig"/>
+  <irrigationRules xmi:id="_P-iWzcnCEe6h7J93KZxaig" setting="HIGH" duration="3" pumps="_P-iWuMnCEe6h7J93KZxaig _P-iWucnCEe6h7J93KZxaig _P-iWusnCEe6h7J93KZxaig _P-iWvMnCEe6h7J93KZxaig" expression="_P-iW08nCEe6h7J93KZxaig"/>
+  <irrigationRules xmi:id="_P-iWzsnCEe6h7J93KZxaig" duration="2" pumps="_P-iWysnCEe6h7J93KZxaig _P-iWy8nCEe6h7J93KZxaig _P-iWwcnCEe6h7J93KZxaig" expression="_P-iW2MnCEe6h7J93KZxaig"/>
+  <irrigationRules xmi:id="_P-iWz8nCEe6h7J93KZxaig" setting="MEDIUM" duration="12" pumps="_P-iWssnCEe6h7J93KZxaig _P-iWs8nCEe6h7J93KZxaig _P-iWuMnCEe6h7J93KZxaig _P-iWvsnCEe6h7J93KZxaig _P-iWw8nCEe6h7J93KZxaig _P-iWxcnCEe6h7J93KZxaig _P-iWx8nCEe6h7J93KZxaig" expression="_P-iW38nCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW0MnCEe6h7J93KZxaig" moistureUpperBound="20" field="_P-iWsMnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW0cnCEe6h7J93KZxaig" moistureUpperBound="20" field="_P-iWtsnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW0snCEe6h7J93KZxaig" forecastLowerBound="10" forecastUpperBound="20" moistureLowerBound="20" moistureUpperBound="30" field="_P-iWtsnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW08nCEe6h7J93KZxaig" RHS="_P-iW0snCEe6h7J93KZxaig" LHS="_P-iW0cnCEe6h7J93KZxaig" operator="OR"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW1MnCEe6h7J93KZxaig" forecastLowerBound="50" forecastUpperBound="100" moistureUpperBound="20" field="_P-iWv8nCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW1cnCEe6h7J93KZxaig" forecastLowerBound="50" forecastUpperBound="75" moistureLowerBound="20" moistureUpperBound="30" field="_P-iWyMnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW1snCEe6h7J93KZxaig" RHS="_P-iW1cnCEe6h7J93KZxaig" LHS="_P-iW1MnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW18nCEe6h7J93KZxaig" forecastLowerBound="60" forecastUpperBound="90" moistureUpperBound="20" field="_P-iWyMnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW2MnCEe6h7J93KZxaig" RHS="_P-iW18nCEe6h7J93KZxaig" LHS="_P-iW1snCEe6h7J93KZxaig" operator="OR"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW2cnCEe6h7J93KZxaig" forecastLowerBound="5" forecastUpperBound="15" moistureLowerBound="20" moistureUpperBound="30" field="_P-iWsMnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW2snCEe6h7J93KZxaig" forecastLowerBound="5" forecastUpperBound="15" moistureLowerBound="20" moistureUpperBound="30" field="_P-iWv8nCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW28nCEe6h7J93KZxaig" RHS="_P-iW2snCEe6h7J93KZxaig" LHS="_P-iW2cnCEe6h7J93KZxaig" operator="OR"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW3MnCEe6h7J93KZxaig" forecastLowerBound="5" forecastUpperBound="10" moistureUpperBound="20" field="_P-iWtsnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW3cnCEe6h7J93KZxaig" RHS="_P-iW28nCEe6h7J93KZxaig" LHS="_P-iW3MnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:AtomicExpression" xmi:id="_P-iW3snCEe6h7J93KZxaig" forecastLowerBound="6" forecastUpperBound="9" moistureUpperBound="20" field="_P-iWsMnCEe6h7J93KZxaig"/>
+  <expressions xsi:type="ims:CompoundExpression" xmi:id="_P-iW38nCEe6h7J93KZxaig" RHS="_P-iW3snCEe6h7J93KZxaig" LHS="_P-iW3cnCEe6h7J93KZxaig" operator="OR"/>
+</ims:IMS>

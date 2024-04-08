@@ -1,0 +1,49 @@
+Field F1 {
+    section S1 {
+        pump P101
+        pump P102
+    }
+    section S2 {
+        pump P103
+    }     
+}
+
+Field F2 {
+	section S3 {
+		pump P201
+		pump P202
+		pump P203
+		pump P204
+		pump P205
+	}
+}
+
+Field F3 {
+	section S4 {
+		pump P301
+		pump P302
+		pump P401
+		pump P402
+	}
+}
+
+Field F4 {
+	section S5 {
+		pump P303
+		pump P304
+	}
+}
+
+Field F5 {}
+
+If (forecast = 0 to 0%, F1.moisture = 0 to 20) then HIGH for F1.S1.P101, F1.S1.P102, F1.S2.P103 for 1 hour(s)
+
+If ((forecast = 0 to 0%, F2.moisture = 0 to 20) OR (forecast = 10 to 20%, F2.moisture = 20 to 30)) then
+HIGH for F2.S3.P201, F2.S3.P202, F2.S3.P203, F2.S3.P204 for 3 hour(s)
+
+If (((forecast = 50 to 100%, F3.moisture = 0 to 20) AND (forecast = 50 to 75%, F4.moisture = 20 to 30))
+OR (forecast = 60 to 90%, F4.moisture = 0 to 20)) then LOW for F3.S4.P401, F3.S4.P402, F3.S4.P301 for 2 hour(s)
+
+If (((forecast = 5 to 10%, F2.moisture = 0 to 20) AND ((forecast = 5 to 15%, F1.moisture = 20 to 30) OR
+(forecast = 5 to 15%, F3.moisture = 20 to 30))) OR (forecast = 6 to 9%, F1.moisture = 0 to 20)) then
+MEDIUM for F1.S1.P101, F1.S1.P102, F2.S3.P201, F2.S3.P205, F3.S4.P302, F4.S5.P303, F4.S5.P304 for 12 hour(s)

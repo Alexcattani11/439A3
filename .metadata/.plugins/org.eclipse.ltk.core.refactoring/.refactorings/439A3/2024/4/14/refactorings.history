@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;generate.mtl, Main.java&apos; to &apos;org.eclipse.acceleo.module.IMS2Web.main&apos;" description="Move 2 resources to &apos;org.eclipse.acceleo.module.IMS2Web.main&apos;" destination="org.eclipse.acceleo.module.IMS2Web/src/org.eclipse.acceleo.module.IMS2Web.main" element1="org.eclipse.acceleo.module.IMS2Web/src/generate.mtl" element2="org.eclipse.acceleo.module.IMS2Web/src/Main.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1712443953694" updateReferences="true"/>
+</session>
